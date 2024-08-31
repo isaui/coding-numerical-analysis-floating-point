@@ -6,7 +6,7 @@ function [approx, abs_error, rel_error] = forward_diff(x, k)
     fprime_exact = 1 / (2 * sqrt(x));
     
     % Hitung aproksimasi dengan memastikan operasi double precision
-    approx = (f(x + h) - f(x)) / (2*h);
+    approx = (f(x + h) - f(x-h)) / (2*h);
     
     % Hitung error
     abs_error = abs(approx - fprime_exact);
